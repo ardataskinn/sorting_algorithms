@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SORT.EXE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="screen">
+<header>
+<h1 class="logo">SORT.EXE<span class="cursor">_</span></h1>
+<nav>
+<button class="nav-btn active" data-page="categories">KATEGORİLER</button>
+<button class="nav-btn" data-page="algorithms">ALGORİTMALAR</button>
+<button class="nav-btn" data-page="compare">KARŞILAŞTIR</button>
+</nav>
+</header>
+
+<main>
+<section id="categories" class="page active">
+<h2>&gt; SIRALAMA ALGORİTMALARININ KATEGORİLERİ</h2>
+<p class="lead">Sıralama algoritmalarını farklı şekillerde kategorize edebiliriz.</p>
+
+<div class="cat-tabs">
+<button class="tab-btn active" data-cat="logic">1. MANTIĞINA GÖRE</button>
+<button class="tab-btn" data-cat="memory">2. HAFIZA KULLANIMINA GÖRE</button>
+<button class="tab-btn" data-cat="stability">3. STABİL OLUP OLMAMA</button>
+</div>
+
+<div class="cat-panel active" id="cat-logic">
+<div class="box">
+<h3>A) KARŞILAŞTIRMA TABANLI ALGORİTMALAR</h3>
+<p>Elemanları birbirleriyle karşılaştırarak sıralar.</p>
+<ul class="algo-list">
+<li><a data-algo="bubble">BUBBLE SORT</a> Yan yana olan iki elemanı karşılaştırır.</li>
+<li><a data-algo="selection">SELECTION SORT</a> Dizideki en küçük elemanı başa alır.</li>
+<li><a data-algo="insertion">INSERTION SORT</a> Her elemanı kendinden önceki sıralı kısımda doğru yere yerleştirir.</li>
+</ul>
+</div>
+<div class="box">
+<h3>B) DIVIDE AND CONQUER ALGORİTMALARI</h3>
+<p>Problemi daha küçük alt parçalara bölüp bunları çözüp birleştiren algoritmalar.</p>
+<ul class="algo-list">
+<li><a data-algo="merge">MERGE SORT</a> Diziyi sürekli ikiye böler, en küçük parçaya ulaşınca onları sıralayarak birleştirir.</li>
+<li><a data-algo="quick">QUICK SORT</a> Dizi içinde bir pivot seçer, bu pivotun sağını ve solunu sıralar.</li>
+</ul>
+</div>
+<div class="box">
+<h3>C) FREKANS ALGORİTMALARI</h3>
+<p>Sayıları birbiriyle karşılaştırıp sıralamak yerine sayıları sayarak veya basamaklarına bakarak sıralayan algoritmalar.</p>
+<ul class="algo-list">
+<li><a data-algo="counting">COUNTING SORT</a> Elemanların dizide kaç kez tekrar ettiğini sayarak yerlerini belirler.</li>
+<li><a data-algo="radix">RADIX SORT</a> Sayıları birler, onlar, yüzler basamaklarına göre sıralar.</li>
+<li><a data-algo="bucket">BUCKET SORT</a> Verileri belirli aralıktaki kovalara dağıtır, kovaları kendi içinde sıralayıp birleştirir.</li>
+</ul>
+</div>
+<div class="box">
+<h3>D) AĞAÇ YAPILI ALGORİTMALAR</h3>
+<ul class="algo-list">
+<li><a data-algo="heap">HEAP SORT</a> İkili ağaç (binary heap) yapısını kullanır, en küçük (min heap) veya en büyük (max heap) elemanı hep dışarı atar.</li>
+</ul>
+</div>
+</div>
+
+<div class="cat-panel" id="cat-memory">
+<div class="box">
+<h3>A) IN-PLACE</h3>
+<p>Ekstra hafıza kullanmaz, sıralamayı orijinal dizi üzerinde yapar.</p>
+<div class="chips">
+<a data-algo="bubble">BUBBLE</a><a data-algo="selection">SELECTION</a><a data-algo="insertion">INSERTION</a><a data-algo="quick">QUICK</a><a data-algo="heap">HEAP</a>
+</div>
+</div>
+<div class="box">
+<h3>B) OUT-OF-PLACE</h3>
+<p>Sıralamak için ekstra hafıza kullanır.</p>
+<div class="chips">
+<a data-algo="merge">MERGE</a><a data-algo="counting">COUNTING</a><a data-algo="radix">RADIX</a><a data-algo="bucket">BUCKET</a>
+</div>
+</div>
+</div>
+
+<div class="cat-panel" id="cat-stability">
+<div class="box">
+<p>Stable ise aynı değere sahip elemanlar sıralanırken orijinal sıraları bozulmaz, unstable ise bozulabilir.</p>
+<div class="stable-demo">
+<div class="demo-row"><span class="demo-label">GİRDİ</span><span class="tok c1">3a</span><span class="tok c2">1</span><span class="tok c3">3b</span><span class="tok c2">2</span></div>
+<div class="demo-row"><span class="demo-label">STABLE</span><span class="tok c2">1</span><span class="tok c2">2</span><span class="tok c1">3a</span><span class="tok c3">3b</span></div>
+<div class="demo-row"><span class="demo-label">UNSTABLE</span><span class="tok c2">1</span><span class="tok c2">2</span><span class="tok c3">3b</span><span class="tok c1">3a</span></div>
+</div>
+</div>
+<div class="box">
+<h3>A) STABLE</h3>
+<div class="chips">
+<a data-algo="bubble">BUBBLE</a><a data-algo="insertion">INSERTION</a><a data-algo="merge">MERGE</a><a data-algo="counting">COUNTING</a><a data-algo="radix">RADIX</a><a data-algo="bucket">BUCKET</a>
+</div>
+</div>
+<div class="box">
+<h3>B) UNSTABLE</h3>
+<div class="chips">
+<a data-algo="selection">SELECTION</a><a data-algo="quick">QUICK</a><a data-algo="heap">HEAP</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="algorithms" class="page">
+<div class="algo-picker" id="algoPicker"></div>
+
+<div class="algo-head">
+<h2 id="algoName"></h2>
+<div class="tags" id="algoTags"></div>
+</div>
+
+<div class="grid-2">
+<div class="box">
+<h3>TANIM</h3>
+<p id="algoDesc"></p>
+<h3>ÇALIŞMA MANTIĞI</h3>
+<ol id="algoSteps"></ol>
+</div>
+<div class="box">
+<h3>KARMAŞIKLIK</h3>
+<table class="cx">
+<tbody id="algoCx"></tbody>
+</table>
+</div>
+</div>
+
+<div class="box">
+<div class="controls">
+<div class="ctrl-group">
+<span class="ctrl-label">GÖRÜNÜM</span>
+<button class="toggle active" data-mode="bars" data-target="single">ÇUBUK</button>
+<button class="toggle" data-mode="nums" data-target="single">SAYI</button>
+</div>
+<div class="ctrl-group">
+<span class="ctrl-label">BOYUT <b id="sizeVal">16</b></span>
+<input type="range" id="sizeIn" min="5" max="50" value="16">
+</div>
+<div class="ctrl-group">
+<span class="ctrl-label">HIZ</span>
+<input type="range" id="speedIn" min="1" max="100" value="50">
+</div>
+</div>
+<div class="controls">
+<input type="text" id="customIn" class="txt" placeholder="ÖRN: 5, 3, 8, 1, 9, 2">
+<button class="btn" id="useCustom">GİRDİYİ KULLAN</button>
+<button class="btn" id="randomBtn">RASTGELE</button>
+</div>
+<div class="viz" id="vizSingle"></div>
+<div class="legend">
+<span><i class="lg cmp"></i>KARŞILAŞTIRMA</span>
+<span><i class="lg swap"></i>TAKAS</span>
+<span><i class="lg write"></i>YAZMA</span>
+<span><i class="lg pivot"></i>PİVOT</span>
+<span><i class="lg done"></i>SIRALI</span>
+</div>
+<div class="controls">
+<button class="btn primary" id="playBtn">BAŞLAT</button>
+<button class="btn" id="stepBtn">ADIM</button>
+<button class="btn" id="resetBtn">SIFIRLA</button>
+<div class="stats" id="statsSingle"></div>
+</div>
+</div>
+
+<div class="box">
+<h3>C++ KODU</h3>
+<pre class="code"><code id="algoCode"></code></pre>
+</div>
+</section>
+
+<section id="compare" class="page">
+<h2>&gt; İKİ ALGORİTMAYI KARŞILAŞTIR</h2>
+<div class="box">
+<div class="controls">
+<div class="ctrl-group">
+<span class="ctrl-label">1. ALGORİTMA</span>
+<select id="cmpA" class="sel"></select>
+</div>
+<div class="ctrl-group">
+<span class="ctrl-label">2. ALGORİTMA</span>
+<select id="cmpB" class="sel"></select>
+</div>
+<div class="ctrl-group">
+<span class="ctrl-label">GÖRÜNÜM</span>
+<button class="toggle active" data-mode="bars" data-target="compare">ÇUBUK</button>
+<button class="toggle" data-mode="nums" data-target="compare">SAYI</button>
+</div>
+</div>
+<div class="controls">
+<div class="ctrl-group">
+<span class="ctrl-label">BOYUT <b id="cmpSizeVal">20</b></span>
+<input type="range" id="cmpSize" min="5" max="50" value="20">
+</div>
+<div class="ctrl-group">
+<span class="ctrl-label">HIZ</span>
+<input type="range" id="cmpSpeed" min="1" max="100" value="50">
+</div>
+</div>
+<div class="controls">
+<input type="text" id="cmpCustom" class="txt" placeholder="ÖRN: 5, 3, 8, 1, 9, 2">
+<button class="btn" id="cmpUseCustom">GİRDİYİ KULLAN</button>
+<button class="btn" id="cmpRandom">RASTGELE</button>
+<button class="btn primary" id="cmpPlay">BAŞLAT</button>
+<button class="btn" id="cmpReset">SIFIRLA</button>
+</div>
+</div>
+
+<div class="grid-2">
+<div class="box">
+<h3 id="cmpNameA"></h3>
+<div class="viz small" id="vizA"></div>
+<div class="stats" id="statsA"></div>
+</div>
+<div class="box">
+<h3 id="cmpNameB"></h3>
+<div class="viz small" id="vizB"></div>
+<div class="stats" id="statsB"></div>
+</div>
+</div>
+<div class="result" id="cmpResult"></div>
+</section>
+</main>
+</div>
+<script src="algorithms.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
